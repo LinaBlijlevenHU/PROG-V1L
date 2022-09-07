@@ -85,3 +85,35 @@ print(alle_studenten)
 # Sorteer onze lijst van studenten in omgekeerde volgorde
 alle_studenten.reverse()
 print(alle_studenten)
+
+######################
+# Lijsten vs. tuples #
+######################
+
+# Maak een lijst en een tuple
+lst = ['a', 'b', 'c', 'd']          # mutable/aanpasbaar
+tup = (1, 2, 3, 4)                  # immutable/niet aanpasbaar
+
+# Vraag een waarde op
+print(lst[1])
+print(tup[1])
+
+# Pas een lijst aan
+lst[1] = 'e'
+print(lst)
+
+# Tuples zijn niet aanpasbaar
+#tup[1] = 5                         # ERROR
+
+# Voorbeeldfunctie: wanneer gebruik je een tuple?
+# In de praktijk weinig
+def statistieken(lst):
+    gem = sum(lst)/len(lst)
+    # hier zouden we bijv. de mediaan en standaardafwijking berekenen
+
+    return (gem, 0, 0)
+
+(gem, med, stda) = statistieken([1, 2, 3, 4, 5])
+print(f"Het gemiddelde is {gem}")
+print(f"De mediaan is {med}")
+
