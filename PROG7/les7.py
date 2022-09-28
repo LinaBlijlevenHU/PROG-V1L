@@ -1,5 +1,6 @@
 # Accumulator loop pattern
 # For-loop (opsommen met integer)
+# Dit voorbeeld werkt ook voor floats.
 def opsommen(lijst):
 
     # We beginnen met tellen op 0
@@ -16,7 +17,7 @@ def opsommen(lijst):
 lijst = [1, 2, 3, 4, 5]
 print(opsommen(lijst))                  # 15
 
-# For-loop (toevoegen string)
+# For-loop (opbouwen van een string)
 def imploderen(lijst):
 
     # We beginnen met een lege string
@@ -33,7 +34,7 @@ def imploderen(lijst):
 letterlijst = ['a', 'b', 'c', 'd']
 print(imploderen(letterlijst))          # abcd
 
-# For-loop (operatie op een lijst)
+# For-loop (opbouwen van een lijst)
 def kwadratenlijst(lijst):
 
     # Lege lijst voor het resultaat
@@ -54,11 +55,13 @@ lijst = [1, 2, 3, 4, 5]
 print(kwadratenlijst(lijst))            # [1, 4, 9, 16, 25]
 
 # One-way if-statement
+# Alleen if
 betaald, prijs = 100, 113
 if (betaald < prijs):
     print("Je hebt niet genoeg betaald.")
 
 # Two-way
+# If + else
 betaald, prijs = 150, 113
 if (betaald < prijs):
     print("Je hebt niet genoeg betaald.")
@@ -66,6 +69,7 @@ else: # Impliciet: betaald >= prijs
     print("Je hebt genoeg betaald.")
 
 # Multi-way
+# If, elif (eventueel meerdere keren) én else
 betaald, prijs = 113, 113
 if (betaald < prijs):
     print("Je hebt niet genoeg betaald.")
@@ -75,6 +79,8 @@ else:
     print("Je hebt genoeg betaald. Je wisselgeld wordt berekend.")
 
 # Nested if-constructie
+# If-statements kunnen ook if-statements bevatten.
+# Zo is het bijvoorbeeld mogelijk om een stukje informatie op te bouwen.
 betaald, prijs = 120, 113
 if (betaald < prijs):
     print("Je hebt niet genoeg betaald.")
@@ -87,6 +93,11 @@ else: # betaald >= prijs
 
 print("\n\n\n")
 # Volgorde van condities
+# Door de volgorde ontstaan er impliciete condities voor
+# elke elif en else na een if-statement. Hierdoor krijg je
+# gedrag dat je niet expliciet hebt uitgeschreven.
+# Met getallen is het daarom bijvoorbeeld handiger van laag naar
+# hoog of andersom te werken.
 score = -50
 
 if (score < 0):
@@ -98,19 +109,31 @@ else: # >= 50
 
 print("\n\n\n")
 # Iteration loop pattern (per karakter)
+# Open de file
 infile = open('kaartnummers.txt')
+# Lees de inhoud van de file in in een string
 content = infile.read()
+# Loop over elk karakter in de inhoud-string
 for char in content:
+    # Print het karakter (en voeg geen nieuwe regel toe)
     print(char, end='')
+    # Print ook een streepje
     print('-', end='')
+# Sluit de file af
 infile.close()
 print("\n")
 
 # Iteration loop pattern (per regel)
+# Open de file
 infile = open('kaartnummers.txt')
+# Lees de regels uit
 lines = infile.readlines()
+# Loop over de regels
 for line in lines:
+    # Print de regel en voeg niets toe om de regel mee te eindigen
+    # (de line heeft zelf al een \n)
     print(line, end='')
+# Sluit de file netjes af
 infile.close()
 
 print("\n\n\n")
@@ -118,6 +141,9 @@ print("\n\n\n")
 dieren = ['kip', 'koe', 'konijn']
 
 # For-each loop
+# We hoeven niet na te denken over hoe lang de lijst is,
+# of indices te gebruiken. Python doet iets vergelijkbaars met
+# de loop hieronder voor je.
 for dier in dieren:
     print(dier)
 
@@ -126,11 +152,14 @@ for i in range(len(dieren)):
     print(dieren[i])
 
 print("\n\n\n")
-# Write function acronym() that:
-# • takes a phrase (i.e., a string) as input
-# • returns the acronym for the phrase
+# Exercise: acronym
 def acronym(zin):
+    '''
+    Maak een acronym van een gegeven zin.
 
+    :param  string  Zin om een acronym van te maken:
+    :return string  Acronym:
+    '''
     # Zet de zin om naar hoofdletters
     upper_zin = zin.upper()
 
@@ -147,10 +176,14 @@ def acronym(zin):
     # Geef het acronym terug
     return ac
 
+# Test de acronym functie
 print(acronym("Be right back"))                 # BRB
 print(acronym("Een aap die geen bananen eet"))  # EADGBE
 
 # Nested loop pattern
+# Je kunt binnen loops ook weer andere loops gebruiken. (let op de volgorde!)
+# Je kunt het aantal iteraties van elke loop met elkaar vermenigvuldigen om
+# een totaal te krijgen. Bijv: 10x een loop met een 10x loop erin betekent 100 iteraties.
 
 # 1A, 1B, 1C, 1D, 2A, 2B...
 for i in range(1, 5):
@@ -164,9 +197,13 @@ for klas_letter in ['A', 'B', 'C', 'D']:
 
 print("\n\n\n")
 # Two-dimensional lists
+# Open de lijst met kaartnummers (van opgave 6.2)
 f = open('kaartnummers.txt')
+# Lees alle regels uit het bestand in
 lines = f.readlines()
 
+# Maak een lege array aan voor de informatie
+# over de personen
 personen = []
 
 # Loop over de lines uit het tekstbestand
@@ -180,13 +217,19 @@ for line in lines:
     # Sla de persoonsinformatie op
     personen.append(persoon)
 
+# Loop over een array
 for persoon in personen:
+    # Selecteer informatie uit de subarrays
     naam, nummer = persoon[1], persoon[0]
+    # Print de info
     print(f"{naam} heeft kaartnummer {nummer}")
 
 # Nested loop pattern and 2-D lists
+# Loop over een array
 for persoon in personen:
+    # Loop over alle informatie beschikbaar in de persoon-array
     for informatie in persoon:
+        # Print de informatie
         print(informatie)
 
 # Implement function pixels() that takes as input:
