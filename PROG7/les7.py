@@ -239,7 +239,22 @@ for persoon in personen:
 # not dark). Your function should work on two-dimensional lists of any size.
 def pixels(image):
 
-    return
+    # Teller voor de pixels
+    count = 0
+
+    # Loop over de rijen
+    for rij in image:
+        # Loop over de kolommen
+        for waarde in rij:
+            print(f"We zitten nu op pixelwaarde {waarde}")
+            # Check voor positieve waarde
+            if (waarde > 0):
+                # Verhoog de count
+                count += 1
+                print(f"Positief! Count: {count}")
+
+    # Geef het totale aantal terug
+    return count
 
 image = [[1, 4, 5, 0], [4, 5, 3, 0], [0, 0, 3, 1], [14, 7, 9, 0]]
 print(pixels(image))
