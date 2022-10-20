@@ -1,4 +1,4 @@
-# PROG-V1B
+# PROG-V1L
 Deze repository bevat alle codevoorbeelden die zijn behandeld in de lessen van V1L aan Hogeschool Utrecht (collegejaar 2022/2023). De voorbeelden zijn opgedeeld in mapjes per les, deze komen overeen met de lessen zoals ze op Canvas staan.
 
 * PROG1: Starten met Python
@@ -11,7 +11,7 @@ Deze repository bevat alle codevoorbeelden die zijn behandeld in de lessen van V
 * PROG8: Control Structures & Dictionaries
 * PROG9: Containers (Sets and Chars) & Exceptions (geen voorbeelden beschikbaar door technische problemen)
 * PROG10: Namespaces & JSON
-* PROG11: API’s & databases
+* PROG11: API’s & databases (met voorbeelden proeftentamen)
 * PROG12: GUI (Tkinter)
 
 Je kunt mij altijd contacteren op lina.blijleven@hu.nl voor vragen.
