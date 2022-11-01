@@ -4,7 +4,7 @@ Deze repository bevat alle codevoorbeelden die zijn behandeld in de lessen van V
 * PROG1: Starten met Python
 * PROG2: Lists
 * PROG3: Console I/O, operators & algoritmiek
-* PROG4: Control structures (afwezig door ziekte, zie ook https://github.com/LinaBlijlevenHU/PROG-V1B)
+* PROG4: Control structures (afwezig door ziekte, zie ook [de repo van 1B](https://github.com/LinaBlijlevenHU/PROG-V1B))
 * PROG5: Functions
 * PROG6: Strings, Text Data, and File I/O
 * PROG7: Execution Control Structures
